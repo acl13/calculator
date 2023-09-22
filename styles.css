@@ -21,6 +21,7 @@ body {
     border-radius: 10px; 
     box-shadow: 1.5rem 1.5rem 2rem  rgb(53, 68, 87);
     overflow: hidden;
+   font-family: "Orbitron" , sans-serif; 
 
      
 }
@@ -34,10 +35,12 @@ body {
 
 .calculator-output-main {
     font-size: 3em;
-}
+    height: 40px;
+}   
 
 .calculator-output-secondary {
     color: #b5bfc9;
+    height: 28px;
 }
 
 
@@ -65,4 +68,6 @@ button {
     font-size: 1.5em;
     border-radius: 5px;
     overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
 }
