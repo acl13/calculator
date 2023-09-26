@@ -85,5 +85,14 @@ equals.addEventListener('click', function() {
 })
 
 
+const clear = document.querySelector('.clear');
+
+clear.addEventListener('click', function() {
+    num1 = undefined;
+    num2 = undefined;
+    operator = undefined;
+    displayMain.textContent = '';
+    displaySecondary.textContent = '';
+})
 
 
