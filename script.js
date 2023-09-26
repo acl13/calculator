@@ -17,7 +17,13 @@ const multiply = function (a, b) {
 }
 
 const divide = function (a, b) {
-    return a / b;
+    if (b == 0) {
+        displayMain.textContent = "ERROR";
+        alert('Dividing by zero is not allowed!');
+    } else if (b !== 0) {
+        return a / b;
+    }
+   
 }
 
 const operate = function(x, op, y) {
