@@ -5,15 +5,15 @@ let result;
 
 
 const add = function (a, b) {
-    return a + b;
+    return Math.round((a + b)*1000000)/1000000;
 }
 
 const subtract = function (a, b) {
-    return a - b;
+    return Math.round((a - b)*1000000)/1000000;
 }
 
 const multiply = function (a, b) {
-    return a * b;
+    return Math.round((a * b)*1000000)/1000000;
 }
 
 const divide = function (a, b) {
@@ -21,7 +21,7 @@ const divide = function (a, b) {
         displayMain.textContent = "ERROR";
         alert('Dividing by zero is not allowed!');
     } else if (b !== 0) {
-        return a / b;
+        return Math.round((a / b)*1000000)/1000000;
     }
    
 }
