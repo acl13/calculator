@@ -13,7 +13,7 @@ const subtract = function (a, b) {
 }
 
 const multiply = function (a, b) {
-    return Math.round((a * b)*1000000)/1000000;
+        return Math.round((a * b)*1000000)/1000000;
 }
 
 const divide = function (a, b) {
@@ -74,6 +74,14 @@ operators.forEach(op => {
 const equals = document.querySelector('.equals');
 
 equals.addEventListener('click', function() {
+    console.log(displayMain.textContent);
+    if (displayMain.textContent === '') {
+        num2 = +displaySecondary.textContent;
+        console.log('If no second number is provided, the operation will remain unchanged');
+        console.log(`num2 ${num2}`);
+    } else if (operator == undefined) {
+       console.log('No operator. Number will remain unchanged.'); 
+    } else    {
     num1 = +displaySecondary.textContent;
     num2 = +displayMain.textContent;
     console.log(`num1 ${num1} num2 ${num2}`);
@@ -82,6 +90,7 @@ equals.addEventListener('click', function() {
     displaySecondary.textContent = displayMain.textContent;
     displayMain.textContent = result;
     return result;
+}
 })
 
 
