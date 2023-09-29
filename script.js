@@ -57,19 +57,41 @@ numbers.forEach(number => {
 
 
 
+
 const operators = document.querySelectorAll('.operator');
 
 operators.forEach(op => {
-    op.addEventListener('click', function() {
+    const getOperator = function() {
         console.log(op.textContent);
-        operator = op.textContent;
-        num1 = +displayMain.textContent;
-        console.log(`num1 ${num1}`);
-        displayMain.textContent = '';
-        displaySecondary.textContent = num1;
-        return operator;
+            operator = op.textContent;
+            num1 = +displayMain.textContent;
+            console.log(`num1 ${num1}`);
+            displayMain.textContent = '';
+            displaySecondary.textContent = num1;
+            return operator;
+    }
+    op.addEventListener('click', function() {
+        if (operator == undefined) {
+            console.log('test');
+            getOperator();
+        } else {
+            getResult();
+            getOperator();
+        }
     })
 }) 
+
+
+const getResult = function() {
+    num1 = +displaySecondary.textContent;
+    num2 = +displayMain.textContent;
+    console.log(`num1 ${num1} num2 ${num2}`);
+    result = operate(num1, operator, num2);
+    console.log(`result ${result}`);
+    displaySecondary.textContent = displayMain.textContent;
+    displayMain.textContent = result;
+    return result;
+}
 
 const equals = document.querySelector('.equals');
 
@@ -82,14 +104,7 @@ equals.addEventListener('click', function() {
     } else if (operator == undefined) {
        console.log('No operator. Number will remain unchanged.'); 
     } else    {
-    num1 = +displaySecondary.textContent;
-    num2 = +displayMain.textContent;
-    console.log(`num1 ${num1} num2 ${num2}`);
-    result = operate(num1, operator, num2);
-    console.log(`result ${result}`);
-    displaySecondary.textContent = displayMain.textContent;
-    displayMain.textContent = result;
-    return result;
+   getResult();
 }
 })
 
