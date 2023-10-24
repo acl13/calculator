@@ -67,6 +67,7 @@ operators.forEach(op => {
     }
     op.addEventListener('click', function() {
         if (operator == undefined) {
+            console.log('test');
         
             getOperator();
         } else {
@@ -83,6 +84,7 @@ const getResult = function() {
     result = operate(num1, operator, num2);
     displaySecondary.textContent = displayMain.textContent;
     displayMain.textContent = result;
+    operator = undefined;
     return result;
 }
 
