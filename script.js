@@ -43,13 +43,9 @@ const displayMain = document.querySelector(".calculator-output-main");
 const displaySecondary = document.querySelector(".calculator-output-secondary");
 
 
-console.log(numbers);
-console.log(displayMain);
-console.log(displaySecondary);
 
 numbers.forEach(number => {
     number.addEventListener('click', function() {
-        console.log(number.textContent);
         displayMain.textContent += number.textContent;
        
     })
@@ -65,14 +61,13 @@ operators.forEach(op => {
         console.log(op.textContent);
             operator = op.textContent;
             num1 = +displayMain.textContent;
-            console.log(`num1 ${num1}`);
             displayMain.textContent = '';
             displaySecondary.textContent = num1;
             return operator;
     }
     op.addEventListener('click', function() {
         if (operator == undefined) {
-            console.log('test');
+        
             getOperator();
         } else {
             getResult();
@@ -85,9 +80,7 @@ operators.forEach(op => {
 const getResult = function() {
     num1 = +displaySecondary.textContent;
     num2 = +displayMain.textContent;
-    console.log(`num1 ${num1} num2 ${num2}`);
     result = operate(num1, operator, num2);
-    console.log(`result ${result}`);
     displaySecondary.textContent = displayMain.textContent;
     displayMain.textContent = result;
     return result;
@@ -99,7 +92,7 @@ equals.addEventListener('click', function() {
     console.log(displayMain.textContent);
     if (displayMain.textContent === '') {
         num2 = +displaySecondary.textContent;
-        console.log('If no second number is provided, the operation will remain unchanged');
+       //If no second number is provided, the operation will remain unchanged
         console.log(`num2 ${num2}`);
     } else if (operator == undefined) {
        console.log('No operator. Number will remain unchanged.'); 
